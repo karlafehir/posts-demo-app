@@ -1,9 +1,12 @@
 import { Card } from "antd";
 import { Link } from "react-router-dom";
-import { useGetPostAuthor } from "../post-details/api/useGetPostAuthor";
+import { useFetch } from "../../hooks/useFetch";
 
 const PostCard = ({ post }) => {
-  const author = useGetPostAuthor(post);
+  const author = useFetch({
+    url: "https://jsonplaceholder.typicode.com/users",
+    id: post.userId,
+  });
 
   return (
     <Card title={post.title} type="inner">
