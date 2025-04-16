@@ -1,13 +1,6 @@
 import PostCard from "./PostCard";
-import { useGetPosts } from "./api/useGetPost";
 
-const HomePage = () => {
-  const posts = useGetPosts();
-
-  if (!posts) {
-    return <div>Loading...</div>;
-  }
-
+const HomePage = ({ posts }) => {
   return (
     <div>
       {posts.map((post) => (

@@ -1,15 +1,15 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import HomePage from "../features/home/HomePage";
 import PostDetails from "../features/post-details/PostDetails";
+import HomePageContainer from "../features/home/HomePageContainer";
 
 const router = createBrowserRouter([
   {
     path: "/posts",
-    element: <HomePage />,
+    element: <HomePageContainer />,
   },
   {
     path: "/",
-    element: <HomePage />,
+    element: <HomePageContainer />,
   },
   {
     path: "/posts/:postId",
