@@ -6,7 +6,11 @@ const HomePageContainer = () => {
     url: "https://jsonplaceholder.typicode.com/posts",
   });
 
-  return <HomePage posts={posts} />;
+  const users = useFetch({
+    url: "https://jsonplaceholder.typicode.com/users",
+  });
+
+  return <HomePage posts={posts} users={users} />;
 };
 
 export default HomePageContainer;
