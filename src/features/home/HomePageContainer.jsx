@@ -1,8 +1,10 @@
 import HomePage from "./HomePage";
-import { useGetPosts } from "./api/useGetPost";
+import { useFetch } from "../../hooks/useFetch";
 
 const HomePageContainer = () => {
-  const posts = useGetPosts();
+  const posts = useFetch({
+    url: "https://jsonplaceholder.typicode.com/posts",
+  });
 
   return <HomePage posts={posts} />;
 };
