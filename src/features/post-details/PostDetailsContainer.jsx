@@ -5,10 +5,7 @@ import { useFetch } from "../../hooks/useFetch.js";
 const PostDetailsContainer = () => {
   const { postId } = useParams();
 
-  const post = useFetch({
-    url: "https://jsonplaceholder.typicode.com/posts",
-    id: postId,
-  });
+  const post = useFetch(`https://jsonplaceholder.typicode.com/posts/${postId}`);
 
   return <PostDetails post={post} />;
 };
