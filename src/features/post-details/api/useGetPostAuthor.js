@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-export const useGetPostAutor = (post) => {
+export const useGetPostAuthor = (post) => {
   const [author, setAuthor] = useState([]);
 
   async function fetchPostAuthor() {

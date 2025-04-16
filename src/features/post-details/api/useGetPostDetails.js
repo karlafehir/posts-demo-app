@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 export const useGetPostDetails = (postId) => {
   const [post, setPost] = useState({});
 
-  async function fetchPosts() {
+  async function fetchPostDetails() {
     await axios
       .get(`https://jsonplaceholder.typicode.com/posts/${postId}`)
       .then((res) => {
@@ -14,7 +14,7 @@ export const useGetPostDetails = (postId) => {
   }
 
   useEffect(() => {
-    fetchPosts();
+    fetchPostDetails();
   }, []);
 
   return post;

@@ -1,6 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "../features/home/HomePage";
-import PostDetails from "../features/posts/PostDetails";
+import PostDetails from "../features/post-details/PostDetails";
 
 const router = createBrowserRouter([
   {

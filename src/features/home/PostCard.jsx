@@ -1,9 +1,9 @@
 import { Card } from "antd";
 import { Link } from "react-router-dom";
-import { useGetPostAutor } from "../posts/api/useGetPostAuthor";
+import { useGetPostAuthor } from "../post-details/api/useGetPostAuthor";
 
 const PostCard = ({ post }) => {
-  const author = useGetPostAutor(post);
+  const author = useGetPostAuthor(post);
 
   return (
     <Card title={post.title} type="inner">
