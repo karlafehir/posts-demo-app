@@ -1,5 +1,6 @@
 import { useGetPostDetails } from "./api/useGetPostDetails.js";
 import { useParams } from "react-router-dom";
+import { Card } from "antd";
 
 const PostDetails = () => {
   const { postId } = useParams();
@@ -11,10 +12,9 @@ const PostDetails = () => {
   }
 
   return (
-    <>
-      <p>{post.title}</p>
-      <p>{post.body}</p>
-    </>
+    <Card type="inner" title={post.title}>
+      {post.body}
+    </Card>
   );
 };
 
