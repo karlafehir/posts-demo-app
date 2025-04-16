@@ -7,7 +7,11 @@ const PostDetailsContainer = () => {
 
   const post = useFetch(`https://jsonplaceholder.typicode.com/posts/${postId}`);
 
-  return <PostDetails post={post} />;
+  const comments = useFetch(
+    `https://jsonplaceholder.typicode.com/posts/${postId}/comments`
+  );
+
+  return <PostDetails post={post} comments={comments} />;
 };
 
 export default PostDetailsContainer;
