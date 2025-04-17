@@ -8,7 +8,7 @@ const HomePage = ({ filteredPosts, handleSearchChange, searchItem }) => {
     <div>
       <Input
         type="text"
-        placeholder="Search posts"
+        placeholder="Search posts or author"
         value={searchItem}
         onChange={handleSearchChange}
       />

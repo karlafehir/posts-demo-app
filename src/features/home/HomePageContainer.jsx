@@ -17,8 +17,10 @@ const HomePageContainer = ({}) => {
     setSearchItem(e.target.value.toLowerCase());
   };
 
-  const filteredPosts = postsWithUsers.filter((post) =>
-    post.title.toLowerCase().includes(searchItem)
+  const filteredPosts = postsWithUsers.filter(
+    (post) =>
+      post.title.toLowerCase().includes(searchItem) ||
+      post.user.name.toLowerCase().includes(searchItem)
   );
 
   return (
