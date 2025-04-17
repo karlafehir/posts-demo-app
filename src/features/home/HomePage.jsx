@@ -6,14 +6,18 @@ const HomePage = ({ filteredPosts, handleSearchChange, searchItem }) => {
 
   return (
     <div>
-      <Input
-        type="text"
-        placeholder="Search posts or author"
-        value={searchItem}
-        onChange={handleSearchChange}
-      />
+      <div className="pb-10">
+        <Input
+          type="text"
+          placeholder="Search posts or author"
+          value={searchItem}
+          onChange={handleSearchChange}
+        />
+      </div>
       {filteredPosts.map((post) => (
-        <PostCard key={post.id} post={post} />
+        <div className="py-4" key={post.id}>
+          <PostCard post={post} />
+        </div>
       ))}
     </div>
   );

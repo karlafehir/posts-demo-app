@@ -5,16 +5,18 @@ const PostComment = ({ comments }) => {
   return (
     <div>
       {comments.map((comment) => (
-        <Card key={comment.id}>
-          <Meta
-            avatar={
-              <Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=8" />
-            }
-            title={comment.name}
-            description={comment.email}
-          />
-          <p>{comment.body}</p>
-        </Card>
+        <div key={comment.id} className="pb-4">
+          <Card>
+            <Meta
+              avatar={
+                <Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=8" />
+              }
+              title={comment.name}
+              description={comment.email}
+            />
+            <p>{comment.body}</p>
+          </Card>
+        </div>
       ))}
     </div>
   );
