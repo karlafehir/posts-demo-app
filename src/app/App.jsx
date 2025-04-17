@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePageContainer from "../features/home/HomePageContainer";
 import PostDetailsContainer from "../features/post-details/PostDetailsContainer";
+import "./App.css";
 
 const router = createBrowserRouter([
   {
@@ -19,9 +20,9 @@ const router = createBrowserRouter([
 
 function App() {
   return (
-    <>
+    <div className="py-20 px-28">
       <RouterProvider router={router} />
-    </>
+    </div>
   );
 }
 
