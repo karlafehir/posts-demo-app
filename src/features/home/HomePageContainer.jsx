@@ -8,18 +8,22 @@ const HomePageContainer = ({}) => {
   const posts = useFetch("https://jsonplaceholder.typicode.com/posts");
   const users = useFetch("https://jsonplaceholder.typicode.com/users");
 
+  const postsWithUsers = posts.map((post) => {
+    let user = users.find((user) => user.id == post.userId);
+    return { ...post, user };
+  });
+
   const handleSearchChange = (e) => {
     setSearchItem(e.target.value.toLowerCase());
   };
 
-  const filteredPosts = posts.filter((post) =>
+  const filteredPosts = postsWithUsers.filter((post) =>
     post.title.toLowerCase().includes(searchItem)
   );
 
   return (
     <HomePage
       filteredPosts={filteredPosts}
-      users={users}
       handleSearchChange={handleSearchChange}
       searchItem={searchItem}
     />
