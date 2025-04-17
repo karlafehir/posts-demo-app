@@ -1,11 +1,18 @@
 import PostCard from "./PostCard";
+import { Input } from "antd";
 
-const HomePage = ({ posts, users }) => {
-  if (!users) return <div>Loading</div>;
+const HomePage = ({ filteredPosts, users, handleSearchChange, searchItem }) => {
+  if (!filteredPosts || !users) return <div>Loading</div>;
 
   return (
     <div>
-      {posts.map((post) => (
+      <Input
+        type="text"
+        placeholder="Search posts"
+        value={searchItem}
+        onChange={handleSearchChange}
+      />
+      {filteredPosts.map((post) => (
         <PostCard
           key={post.id}
           post={post}
