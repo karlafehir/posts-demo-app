@@ -15,7 +15,7 @@ const HomePage = ({ filteredPosts, handleSearchChange, searchItem }) => {
         />
       </div>
       {filteredPosts.map((post) => (
-        <div className="py-4" key={post.id}>
+        <div className="py-1" key={post.id}>
           <PostCard post={post} />
         </div>
       ))}
