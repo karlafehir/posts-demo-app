@@ -1,4 +1,4 @@
-import PostCard from "./PostCard";
+import PostCard from "../../components/PostCard";
 import { Input } from "antd";
 
 const HomePage = ({ filteredPosts, handleSearchChange, searchItem }) => {
@@ -16,7 +16,7 @@ const HomePage = ({ filteredPosts, handleSearchChange, searchItem }) => {
       </div>
       {filteredPosts.map((post) => (
         <div className="py-1" key={post.id}>
-          <PostCard post={post} />
+          <PostCard post={post} showDetails={false} />
         </div>
       ))}
     </div>

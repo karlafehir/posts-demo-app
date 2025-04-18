@@ -1,6 +1,6 @@
 import { Divider, Breadcrumb } from "antd";
 import PostComment from "./PostComment";
-import PostDetailsCard from "./PostDetailsCard";
+import PostCard from "../../components/PostCard";
 
 const PostDetails = ({ post, comments }) => {
   return (
@@ -22,7 +22,7 @@ const PostDetails = ({ post, comments }) => {
       </div>
 
       <div className="pb-18">
-        <PostDetailsCard post={post} />
+        <PostCard post={post} showDetails={true} />
       </div>
       <Divider style={{ borderColor: "#7cb305" }}>Comments</Divider>
       <PostComment comments={comments} />
