@@ -15,7 +15,7 @@ const PostCard = ({ post }) => {
             className="h-10"
           />
         </div>
-        <div className="pb-8 mr-16">{post.body}</div>
+        {/* <div className="pb-8 mr-16">{post.body}</div> */}
         <div className="pb-4">
           <div className="text-gray-400">by {post.user.name}</div>
           <div>Comments</div>

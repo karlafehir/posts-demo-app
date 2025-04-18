@@ -14,7 +14,7 @@ const PostComment = ({ comments }) => {
               title={comment.name}
               description={comment.email}
             />
-            <p>{comment.body}</p>
+            <p className="pt-6">{comment.body}</p>
           </Card>
         </div>
       ))}

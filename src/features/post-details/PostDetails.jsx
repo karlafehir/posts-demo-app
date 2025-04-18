@@ -1,5 +1,6 @@
-import { Card, Divider, Breadcrumb } from "antd";
+import { Divider, Breadcrumb } from "antd";
 import PostComment from "./PostComment";
+import PostDetailsCard from "./PostDetailsCard";
 
 const PostDetails = ({ post, comments }) => {
   return (
@@ -16,14 +17,12 @@ const PostDetails = ({ post, comments }) => {
               href: "",
             },
           ]}
-          params={{ id: 1 }}
+          params={{ id: post.id }}
         />
       </div>
 
       <div className="pb-18">
-        <Card type="inner" title={post.title}>
-          {post.body}
-        </Card>
+        <PostDetailsCard post={post} />
       </div>
       <Divider style={{ borderColor: "#7cb305" }}>Comments</Divider>
       <PostComment comments={comments} />
