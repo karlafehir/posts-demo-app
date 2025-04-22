@@ -27,7 +27,7 @@ const PostDetails = ({ post, comments }) => {
         <PostCard post={post} showDetails={true} />
       </div>
       <Divider style={{ borderColor: "#7cb305" }}>Comments</Divider>
-      <Suspense fallback={<h2>🌀 Loading...</h2>}>
+      <Suspense fallback={<h2>🌀 Loading comments...</h2>}>
         <PostComment comments={comments} />
       </Suspense>
     </>
