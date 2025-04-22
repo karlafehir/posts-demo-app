@@ -1,8 +1,10 @@
 import { Divider, Breadcrumb } from "antd";
-import PostComment from "./PostComment";
+
 import PostCard from "../../components/PostCard";
+import { lazy, Suspense } from "react";
 
 const PostDetails = ({ post, comments }) => {
+  const PostComment = lazy(() => import("./PostComment"));
   return (
     <>
       <div className="pb-8">
@@ -25,7 +27,9 @@ const PostDetails = ({ post, comments }) => {
         <PostCard post={post} showDetails={true} />
       </div>
       <Divider style={{ borderColor: "#7cb305" }}>Comments</Divider>
-      <PostComment comments={comments} />
+      <Suspense fallback={<h2>🌀 Loading...</h2>}>
+        <PostComment comments={comments} />
+      </Suspense>
     </>
   );
 };
