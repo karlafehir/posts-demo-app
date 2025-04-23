@@ -16,14 +16,16 @@ const PostCard = ({ post, showDetails }) => {
         {showDetails ? (
           <div className="pb-8 mr-16">{post.body}</div>
         ) : (
-          <div>
-            <div className="pb-4">
-              <div className="text-gray-400">by {post.user.name}</div>
+          post && (
+            <div>
+              <div className="pb-4">
+                <div className="text-gray-400">by {post.user.name}</div>
+              </div>
+              <Link to={`/posts/${post.id}`} className="text-blue-700">
+                View More
+              </Link>
             </div>
-            <Link to={`/posts/${post.id}`} className="text-blue-700">
-              View More
-            </Link>
-          </div>
+          )
         )}
       </div>
     </>
