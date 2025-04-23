@@ -1,10 +1,8 @@
-import { lazy, Suspense } from "react";
 import { Input } from "antd";
+import PostCard from "../../components/PostCard";
 
 const HomePage = ({ filteredPosts, handleSearchChange, searchItem }) => {
-  if (!filteredPosts) return <div>Loading</div>;
-
-  const PostCard = lazy(() => import("../../components/PostCard"));
+  if (!filteredPosts) return <div>Loading...</div>;
 
   return (
     <div>
@@ -16,13 +14,11 @@ const HomePage = ({ filteredPosts, handleSearchChange, searchItem }) => {
           onChange={handleSearchChange}
         />
       </div>
-      <Suspense fallback={<h2>🌀 Loading posts...</h2>}>
-        {filteredPosts.map((post) => (
-          <div className="py-1" key={post.id}>
-            <PostCard post={post} showDetails={false} />
-          </div>
-        ))}
-      </Suspense>
+      {filteredPosts.map((post) => (
+        <div className="py-1" key={post.id}>
+          <PostCard post={post} showDetails={false} />
+        </div>
+      ))}
     </div>
   );
 };
